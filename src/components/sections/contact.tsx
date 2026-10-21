@@ -1,0 +1,11 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faArrowUpRightFromSquare, faLocationDot, faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { business, getMapsUrl } from "@/config/business";
+import { SectionHeading } from "@/components/ui/section-heading";
+import { WhatsAppLink } from "@/components/ui/whatsapp-link";
+export function Contact() {
+  return <section id="contacto" className="section contact" aria-label="Ubicación y contacto"><div className="container contact-grid">
+    <div><SectionHeading number="06" eyebrow="Cerca de ti" title={`Tu próxima pausa, en ${business.city}.`} /><address className="contact-address"><FontAwesomeIcon icon={faLocationDot} aria-hidden="true" /><div><strong>{business.city}, {business.region}</strong><span>{business.location.address ?? "Solicita la ubicación exacta al agendar tu visita."}</span></div></address><div className="contact-actions"><WhatsAppLink placement="contact">Consultar disponibilidad</WhatsAppLink><a className="text-link" href={getMapsUrl()} target="_blank" rel="noopener noreferrer">{business.location.address || business.location.mapsUrl ? "Abrir Google Maps" : `Ver ${business.city} en Google Maps`}<FontAwesomeIcon icon={faArrowUpRightFromSquare} aria-hidden="true" /></a></div><div className="secondary-contact"><span>También puedes escribirnos al</span><WhatsAppLink placement="contact" variant="text" phone={business.secondaryPhone.international}>{business.secondaryPhone.display}</WhatsAppLink></div></div>
+    <div className="map-slot">{business.location.mapEmbedUrl ? <iframe src={business.location.mapEmbedUrl} title={`Ubicación de ${business.name}`} loading="lazy" referrerPolicy="no-referrer" allowFullScreen /> : <div className="location-card"><p className="eyebrow">Tamaulipas, México</p><FontAwesomeIcon icon={faLocationDot} className="location-mark" aria-hidden="true" /><p className="location-city">Nuevo<br /><em>Laredo.</em></p><div className="location-card-bottom"><span>Coordinemos tu visita.<br />La ubicación se confirma por WhatsApp.</span><a href={getMapsUrl()} target="_blank" rel="noopener noreferrer" aria-label="Ver la ciudad de Nuevo Laredo en Google Maps"><FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a></div></div>}</div>
+  </div></section>;
+}
