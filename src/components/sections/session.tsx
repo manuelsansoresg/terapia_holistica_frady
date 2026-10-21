@@ -1,30 +1,22 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faClock, faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { faClock } from "@fortawesome/free-solid-svg-icons";
 import { business } from "@/config/business";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { MediaSlot } from "@/components/ui/media-slot";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
 
 const steps = [
-  { title: "Te recibimos y resolvemos tus dudas", text: "Antes de comenzar, el equipo te explica la sesión. Comparte cualquier condición de salud y las dudas que tengas sobre el uso del dispositivo." },
-  { title: "Preparamos el baño de pies", text: "Colocas los pies en un recipiente con agua tibia. El equipo prepara el dispositivo iónico y los materiales de la sesión." },
-  { title: "Disfruta de tu momento", text: "Permaneces sentado mientras se utiliza el dispositivo en el agua. Dedica ese tiempo a descansar; avisa al equipo si sientes alguna molestia." },
-  { title: "Cierra tu pausa con calma", text: "Al terminar, retiras y secas tus pies. Puedes resolver tus dudas finales y consultar disponibilidad si deseas otra visita." },
+  { title: "Te recibimos", text: "Resolvemos tus dudas y te explicamos cómo será la sesión antes de comenzar." },
+  { title: "Preparamos el baño", text: "El equipo prepara el agua tibia y el dispositivo iónico para tu baño de pies." },
+  { title: "Disfrutas de tu sesión", text: "Permaneces sentado con los pies en el agua. Si algo te incomoda, avisa al equipo." },
+  { title: "Cerramos con calma", text: "Secas tus pies, resolvemos tus preguntas y puedes consultar una próxima visita." },
 ];
-const recommendations = [
-  { label: "Antes de tu sesión", title: "Ven con comodidad.", items: ["Elige ropa cómoda que permita descubrir tus pies y tobillos.", "Mantén tu hidratación habitual y evita llegar tras una comida pesada.", "Consulta al reservar las indicaciones sobre alimentos, alcohol y cafeína.", "Si tienes una condición de salud, pregunta a tu profesional de salud antes de agendar."] },
-  { label: "Después de tu sesión", title: "Continúa a tu ritmo.", items: ["Seca bien tus pies y vuelve a colocarte el calzado con calma.", "Mantén tus hábitos de hidratación y descanso, según tus necesidades.", "Confirma con el equipo cualquier indicación para después de tu visita.", "Descansa si lo necesitas. Si aparece alguna molestia, consulta a un profesional de salud."] },
-];
-
 export function Session() {
-  return <section id="sesion" className="section section-white" aria-label="Cómo es una sesión">
-    <div className="container session-grid">
-      <div><SectionHeading number="03" eyebrow="Cómo funciona" title="Un baño de pies. Una pausa para ti." description="Conoce el recorrido de tu sesión de desintoxicación iónica, desde la bienvenida hasta el último momento." /><p className="session-duration"><FontAwesomeIcon icon={faClock} aria-hidden="true" /> Duración aproximada: {business.sessionDuration}.</p><WhatsAppLink placement="session" variant="text">Consultar precio y agendar</WhatsAppLink></div>
-      <ol className="session-steps">{steps.map((step, index) => <li key={step.title}><span className="step-number">0{index + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></li>)}</ol>
-    </div>
-    <div className="container visit-guide" aria-labelledby="visit-guide-title">
-      <div className="visit-guide-heading"><p className="eyebrow">Prepara tu momento</p><h3 id="visit-guide-title">Pequeños detalles para tu visita.</h3></div>
-      <div className="recommendation-grid">{recommendations.map((group) => <div className="recommendation" key={group.label}><p className="eyebrow">{group.label}</p><h4>{group.title}</h4><ul>{group.items.map(item => <li key={item}><FontAwesomeIcon icon={faCircleCheck} aria-hidden="true" /><span>{item}</span></li>)}</ul></div>)}</div>
-      <p className="visit-guide-note">Estas sugerencias son de comodidad personal y no sustituyen indicaciones médicas. Sigue las recomendaciones de tu profesional de salud.</p>
-    </div>
-  </section>;
+  return <section id="sesion" className="section session" aria-label="Así es tu sesión"><div className="container">
+    <div className="session-heading"><SectionHeading number="03" eyebrow="Así es tu sesión" title="Así comienza tu momento de bienestar." /><p className="duration-label"><FontAwesomeIcon icon={faClock} aria-hidden="true" /><span>Duración aproximada<strong>{business.sessionDuration}</strong></span></p></div>
+    <ol className="session-story">{steps.map((step, index) => <li key={step.title}><MediaSlot image={business.images.process[index]} className="step-media" sizes="(max-width: 767px) 85vw, (max-width: 1023px) 44vw, 290px" /><div className="step-copy"><span className="step-number">0{index + 1}</span><div><h3>{step.title}</h3><p>{step.text}</p></div></div></li>)}</ol>
+    <p className="process-caption">Secuencia ilustrativa generada con IA. No muestra sesiones reales del negocio.</p>
+    <div className="visit-guide" aria-labelledby="visit-guide-title"><div><p className="eyebrow" id="visit-guide-title">Para disfrutar tu visita</p><p className="guide-intro">Pequeños detalles.<br /><em>Menos dudas.</em></p></div><div className="guide-column"><h3>Antes de llegar</h3><p>Ven con ropa cómoda y mantén tu hidratación habitual. Confirma al reservar las indicaciones sobre alimentos, alcohol y cafeína.</p><a className="inline-link" href="#preguntas">Consulta las precauciones antes de agendar</a></div><div className="guide-column"><h3>Al terminar</h3><p>Seca bien tus pies y retoma tus actividades con calma. Sigue las indicaciones de tu profesional de salud y consulta si aparece alguna molestia.</p></div></div>
+    <div className="session-action"><p>Tu primera visita empieza con una conversación.</p><WhatsAppLink placement="session">Consultar precio y disponibilidad</WhatsAppLink></div>
+  </div></section>;
 }

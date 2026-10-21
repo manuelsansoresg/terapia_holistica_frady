@@ -1,10 +1,17 @@
 import { business } from "@/config/business";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { MediaSlot } from "@/components/ui/media-slot";
+
 export function Trust() {
-  return <section id="espacio" className="section trust" aria-label="Nuestro espacio e inspiración"><div className="container">
-    <div className="section-topline"><SectionHeading number="04" eyebrow="Nuestro espacio · inspiración" title="La calma está en los detalles." /><p className="section-description">Texturas naturales, tonos cálidos<br className="desktop-break" /> y una invitación a bajar el ritmo.</p></div>
-    <div className="gallery-grid"><MediaSlot image={business.images.space} label="La sencillez de lo natural" note="Ambiente ilustrativo" /><div className="gallery-secondary"><MediaSlot image={business.images.session} label="El placer de hacer una pausa" note="Experiencia ilustrativa" /><p className="gallery-quote">Respira. <em>Este momento es tuyo.</em></p></div></div>
-    <p className="gallery-footnote">Galería de inspiración con fotografías de stock. No muestra las instalaciones ni sesiones reales de Terapia Holística Frady.</p>
+  return <section id="espacio" className="section atmosphere" aria-label="Atmósfera e inspiración"><div className="container">
+    <div className="atmosphere-heading"><SectionHeading number="04" eyebrow="Una mirada a la calma" title="Los pequeños detalles también importan." /><p>Una selección visual de texturas,<br className="desktop-break" /> luz y materiales naturales.</p></div>
+    <div className="gallery-editorial">
+      <MediaSlot image={business.images.gallery[0]} className="gallery-main" sizes="(max-width: 767px) 90vw, 58vw" />
+      <MediaSlot image={business.images.gallery[2]} className="gallery-texture" sizes="(max-width: 767px) 44vw, 30vw" />
+      <div className="gallery-phrase"><span>El valor de lo sencillo.</span><p>Menos prisa.<br /><em>Más presente.</em></p></div>
+      <MediaSlot image={business.images.gallery[3]} className="gallery-detail" sizes="(max-width: 767px) 44vw, 30vw" />
+      <MediaSlot image={business.images.gallery[1]} className="gallery-corner" sizes="(max-width: 767px) 90vw, 40vw" />
+    </div>
+    <p className="gallery-footnote">Imágenes ilustrativas generadas con IA. Son referencias de atmósfera; no representan las instalaciones, clientes ni amenidades de Terapia Holística Frady.</p>
   </div></section>;
 }

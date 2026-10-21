@@ -14,8 +14,8 @@ config.autoAddCss = false;
 const heading = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-heading", display: "swap" });
 const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
 
-const title = `${business.name} | Bienestar en ${business.city}`;
-const description = `Conoce ${business.name} en ${business.city}, ${business.region}. Una experiencia de relajación y bienestar con desintoxicación iónica. Información y citas por WhatsApp.`;
+const title = `Baño iónico para pies en ${business.city} | ${business.name}`;
+const description = `Conoce ${business.name} en ${business.city}, ${business.region}. Sesiones de baño iónico para pies de 30 a 45 minutos. Consulta precio y disponibilidad por WhatsApp.`;
 
 export const metadata: Metadata = {
   title,

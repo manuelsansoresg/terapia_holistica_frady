@@ -5,14 +5,18 @@ import { MediaSlot } from "@/components/ui/media-slot";
 import { SectionHeading } from "@/components/ui/section-heading";
 
 export function Introduction() {
-  return <section id="experiencia" className="section section-white" aria-label="La experiencia">
+  return <section id="experiencia" className="section introduction" aria-label="La experiencia">
     <div className="container intro-grid">
-      <div className="intro-image-wrap"><MediaSlot image={business.images.introduction} label="Pequeños rituales de bienestar" note="Fotografía ilustrativa" className="intro-media" /><p className="image-side-note">MENOS PRISA. MÁS PRESENTE.</p></div>
-      <div className="intro-copy"><SectionHeading number="01" eyebrow="La experiencia" title="El bienestar empieza con una pausa." />
-        <p>Entre las responsabilidades y el ritmo de cada día, también hay lugar para ti.</p>
-        <p className="muted">En Terapia Holística Frady, la desintoxicación iónica consiste en un baño de pies con agua tibia y un dispositivo iónico. Una experiencia sin agujas, centrada en el cuidado personal y en hacer espacio para la calma.</p>
-        <blockquote>Equilibrio, bienestar y armonía. Un momento para conectar contigo.</blockquote>
-        <a className="text-link" href="#sesion">Así será tu visita <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a>
+      <div className="intro-art">
+        <MediaSlot image={business.images.introduction} className="intro-media" sizes="(max-width: 767px) 92vw, 48vw" />
+        <MediaSlot image={business.images.introductionDetail} className="intro-detail" sizes="(max-width: 767px) 55vw, 280px" />
+        <p className="art-caption">Imágenes ilustrativas generadas con IA.</p>
+      </div>
+      <div className="intro-copy"><SectionHeading number="01" eyebrow="La experiencia" title="Un momento que comienza contigo." />
+        <p>Agua tibia, un baño de pies y tiempo para dejar de mirar el reloj.</p>
+        <p className="muted">La sesión utiliza un dispositivo iónico en el agua mientras permaneces sentado. El equipo te explica el proceso y resuelve tus preguntas antes de comenzar.</p>
+        <blockquote>Sin prisa.<br /><em>Con tiempo para ti.</em></blockquote>
+        <a className="text-link" href="#sesion">Conoce cada momento <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a>
       </div>
     </div>
   </section>;
