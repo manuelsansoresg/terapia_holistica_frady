@@ -23,7 +23,7 @@ Vista local: http://127.0.0.1:3000. `npm start` sirve la versión de producción
 - **Bienestar:** cuatro conceptos de autocuidado, una fotografía integrada y CTA contextual sobre verde bosque.
 - **Sesión:** cuatro imágenes en secuencia escalonada en escritorio y recorrido vertical en móvil; guía resumida antes/después y CTA de precio/disponibilidad.
 - **Recorrido directo:** por petición del usuario, se retiró la galería de atmósfera. La sesión enlaza directamente con las preguntas y el contacto, sin fotografías de supuestas instalaciones.
-- **FAQ:** seis preguntas principales y cuatro adicionales accesibles mediante “Evidencia científica y otras preguntas”. Las precauciones están en el grupo principal; no se eliminó información sobre evidencia, expectativas o frecuencia.
+- **FAQ:** siete preguntas prácticas adaptadas de los folletos: duración, sensaciones, primera visita, preparación, frecuencia, precauciones y reserva. Sin apartado de evidencia científica en la landing. Se conservan las precauciones importantes y no se prometen resultados médicos. CTA directo para agendar al final.
 - **Contacto:** domicilio confirmado por el usuario, teléfonos y formulario breve con nombre y teléfono. El botón prepara la consulta en WhatsApp; la persona revisa y envía el mensaje.
 - **Cierre y footer:** composición de texto e imagen, CTA destacado y logo original sobre crema.
 
@@ -74,7 +74,7 @@ HTML semántico, h1 único, texto alternativo, foco visible, controles táctiles
 - `npm run typecheck`.
 - `npm run build` (compilación, TypeScript y prerenderizado de `/`).
 - Revisión responsive en navegador a 320, 375, 430, 768, 1024 y 1440 px; sin desbordamiento horizontal.
-- Revisión visual del Hero, secuencia y cierre; comprobación de anclas, menú, FAQ principal y desplegable de evidencia, carga de imágenes y enlaces de WhatsApp.
+- Revisión visual del Hero, secuencia y cierre; comprobación de anclas, menú, acordeones de preguntas frecuentes, carga de imágenes y enlaces de WhatsApp.
 - Formulario: 16 casos de datos válidos/incorrectos, normalización de nombre y teléfono, codificación del mensaje y URL de dirección. Prueba en navegador de envío vacío, teléfono incorrecto, foco en el primer error y corrección de los campos. No se enviaron mensajes reales.
 
 No se afirma una puntuación de Lighthouse ni una mejora de ventas medida. Para medir consultas que terminan en citas se requiere una integración de analítica y un proceso de seguimiento comercial.
@@ -83,4 +83,4 @@ No se afirma una puntuación de Lighthouse ni una mejora de ventas medida. Para 
 
 Horarios, precio, fotografías reales autorizadas, dominio final (`NEXT_PUBLIC_SITE_URL`), aviso de privacidad, imagen de Open Graph y un mapa embebido verificado si se desea incorporarlo. La duración aproximada de 30–45 minutos procede de los folletos del usuario. El usuario confirmó Bocanegra 918, local 3, col. Victoria, C.P. 88030, Nuevo Laredo, Tamaulipas. La dirección está en contacto y footer; Google Maps busca ese domicilio completo, sin inventar coordenadas ni identificadores de un lugar.
 
-Las sesiones se describen como relajación y autocuidado. No se promete extracción de toxinas, grasas o metales pesados, efectos médicos ni seguridad universal. Las precauciones y respuestas sobre evidencia se conservan; referencia de la revisión previa: https://health.clevelandclinic.org/foot-detox . Las opciones de varias citas son consultas de agenda, no pautas médicas ni garantías de resultados.
+Las sesiones se describen como relajación y autocuidado. No se promete extracción de toxinas, grasas o metales pesados, efectos médicos ni seguridad universal. Se conservan las precauciones; referencia de la revisión previa: https://health.clevelandclinic.org/foot-detox . Las opciones de varias citas son consultas de agenda, no pautas médicas ni garantías de resultados.

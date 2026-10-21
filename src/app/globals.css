@@ -148,7 +148,7 @@ h1 em { color:var(--green); }
 .session-action { display:flex; align-items:center; justify-content:space-between; gap:25px; margin-top:32px; }
 .session-action > p { font-family:var(--serif); color:var(--forest); font-size:28px; line-height:1.2; }
 
-/* FAQ: six decision questions, further evidence remains one action away. */
+/* FAQ: practical answers that lead into the booking flow. */
 .faq { background:var(--cream); }
 .faq-grid { display:grid; grid-template-columns:.78fr 1.22fr; gap:100px; align-items:start; }
 .faq-intro { position:sticky; top:125px; }
@@ -164,9 +164,8 @@ h1 em { color:var(--green); }
 .faq-answer > div { overflow:hidden; }
 .faq-item.is-open .faq-answer { grid-template-rows:1fr; visibility:visible; }
 .faq-answer p { padding:0 22px 25px 34px; color:var(--muted); font-size:14px; line-height:1.9; }
-.faq-more { display:flex; width:100%; align-items:center; justify-content:space-between; text-align:left; gap:15px; font-size:13px; font-weight:600; color:var(--forest); padding:20px 0; min-height:55px; border:0; background:none; }
-.faq-more:hover { color:var(--green); }
-.faq-action { margin-top:15px; }
+.faq-action { margin-top:25px; }
+.faq-booking-note { color:var(--muted); font-size:14px; margin-bottom:15px; }
 .faq-action .button-text { font-size:14px; }
 
 /* Confirmed location and a minimal enquiry form. */
@@ -387,7 +386,6 @@ h1 em { color:var(--green); }
   .faq-aside { margin-top:20px; font-size:24px; max-width:300px; }
   .faq-item button { min-height:76px; font-size:14px; padding-block:21px; }
   .faq-answer p { padding-left:26px; font-size:14px; }
-  .faq-more { font-size:12px; }
   .faq-action .button-text { font-size:13px; }
   .contact-grid { grid-template-columns:1fr; gap:35px; }
   .contact-phone { font-size:11px; }
