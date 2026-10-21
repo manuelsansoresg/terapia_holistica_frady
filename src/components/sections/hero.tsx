@@ -18,7 +18,7 @@ export function Hero() {
       <div className="hero-visual">
         <MediaSlot image={business.images.hero} className="hero-media" sizes="(max-width: 767px) 100vw, (max-width: 1400px) 48vw, 620px" priority />
         <div className="hero-duration"><FontAwesomeIcon icon={faClock} aria-hidden="true" /><span><strong>30–45</strong> minutos para hacer una pausa</span></div>
-        <div className="hero-caption"><span>Baño iónico para pies</span><span>Imagen ilustrativa · IA</span></div>
+        <div className="hero-caption"><span>Baño iónico para pies</span></div>
       </div>
     </div>
     <div className="container hero-footnote"><span>El arte de dedicarte tiempo.</span><a href="#sesion">Así es tu sesión <FontAwesomeIcon icon={faArrowDown} aria-hidden="true" /></a></div>

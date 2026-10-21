@@ -6,6 +6,7 @@ export type ConversionPlacement =
   | "benefits"
   | "faq"
   | "contact-secondary"
+  | "contact-form"
   | "contact"
   | "final"
   | "footer"

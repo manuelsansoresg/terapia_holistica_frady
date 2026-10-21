@@ -7,7 +7,7 @@ export interface BrandImage {
 }
 
 function illustration(file: string, width: number, height: number, alt: string): BrandImage {
-  return { src: `/images/frady/${file}.webp`, width, height, alt: `${alt} Ilustración generada con IA.` };
+  return { src: `/images/frady/${file}.webp`, width, height, alt };
 }
 
 export const business = {
@@ -26,7 +26,7 @@ export const business = {
   sessionDuration: "30–45 minutos",
   secondaryPhone: { international: "528345472783", display: "834 547 2783" },
   location: {
-    address: null as string | null,
+    address: "Bocanegra 918, local 3, col. Victoria, C.P. 88030" as string | null,
     mapsUrl: null as string | null,
     /** Only configure a verified venue map. */
     mapEmbedUrl: null as string | null,
@@ -67,8 +67,8 @@ export const navigation = [
   { href: "#contacto", label: "Contacto" },
 ] as const;
 
-export function getWhatsAppUrl(phone: string = business.phone.international) {
-  return `https://wa.me/${phone}?text=${encodeURIComponent(business.phone.message)}`;
+export function getWhatsAppUrl(phone: string = business.phone.international, message: string = business.phone.message) {
+  return `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
 }
 export function getMapsUrl() {
   return business.location.mapsUrl ?? `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(

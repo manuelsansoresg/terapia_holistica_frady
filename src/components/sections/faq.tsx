@@ -29,7 +29,7 @@ export function Faq() {
     </div>;
   }
   return <section id="preguntas" className="section faq" aria-label="Preguntas frecuentes"><div className="container faq-grid">
-    <div className="faq-intro"><SectionHeading number="05" eyebrow="Antes de tu visita" title="Respuestas para venir con calma." description="Lo que necesitas saber para decidir y preparar tu primera sesión." /><p className="faq-aside">La confianza también empieza por una conversación clara.</p></div>
+    <div className="faq-intro"><SectionHeading number="04" eyebrow="Antes de tu visita" title="Respuestas para venir con calma." description="Lo que necesitas saber para decidir y preparar tu primera sesión." /><p className="faq-aside">La confianza también empieza por una conversación clara.</p></div>
     <div><div className="faq-list">{questions.slice(0, 6).map(renderQuestion)}<div id={`${id}-more`} hidden={!showMore}>{questions.slice(6).map((item, index) => renderQuestion(item, index + 6))}</div></div>
       <button type="button" className="faq-more" aria-expanded={showMore} aria-controls={`${id}-more`} onClick={() => { setShowMore(!showMore); if (showMore && open !== null && open >= 6) setOpen(null); }}><span>{showMore ? "Mostrar solo las preguntas principales" : "Evidencia científica y otras preguntas"}</span><FontAwesomeIcon icon={showMore ? faMinus : faPlus} aria-hidden="true" /></button>
       <div className="faq-action"><WhatsAppLink placement="faq" variant="text">¿Tienes otra duda? Escríbenos</WhatsAppLink></div>

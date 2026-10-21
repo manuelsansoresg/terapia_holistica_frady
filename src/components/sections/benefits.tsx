@@ -15,7 +15,7 @@ export function Benefits() {
   return <section id="bienestar" className="section benefits" aria-label="Objetivos de bienestar"><div className="container">
     <div className="benefits-heading"><SectionHeading number="02" eyebrow="Lo que buscamos" title="Hay pausas que merecen un lugar en tu día." /><p>No hace falta una ocasión especial.<br />Solo un momento que sea tuyo.</p></div>
     <div className="benefits-composition">
-      <div className="benefits-art"><MediaSlot image={business.images.benefits} className="benefits-media" sizes="(max-width: 767px) 90vw, 480px" /><p className="art-caption">Escena ilustrativa generada con IA.</p></div>
+      <div className="benefits-art"><MediaSlot image={business.images.benefits} className="benefits-media" sizes="(max-width: 767px) 90vw, 480px" /></div>
       <div className="benefit-list">{themes.map((theme, index) => <div className="benefit-item" key={theme.title}><span className="item-number">0{index + 1}</span><div><h3><FontAwesomeIcon icon={theme.icon} aria-hidden="true" />{theme.title}</h3><p>{theme.text}</p></div></div>)}<WhatsAppLink placement="benefits" variant="text">Consultar disponibilidad</WhatsAppLink></div>
     </div>
     <p className="wellness-note">Objetivos de relajación y autocuidado. Las sensaciones son individuales; no se garantizan resultados médicos.</p>

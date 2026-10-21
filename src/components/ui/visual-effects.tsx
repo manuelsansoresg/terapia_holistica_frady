@@ -8,7 +8,7 @@ export function VisualEffects() {
     const onScroll = () => header?.classList.toggle("is-scrolled", window.scrollY > 20);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    const elements = document.querySelectorAll<HTMLElement>(".section-heading, .intro-art, .benefit-item, .session-story li, .gallery-editorial figure, .final-art");
+    const elements = document.querySelectorAll<HTMLElement>(".section-heading, .intro-art, .benefit-item, .session-story li, .final-art");
     let observer: IntersectionObserver | undefined;
     if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
       observer = new IntersectionObserver(entries => entries.forEach(entry => {

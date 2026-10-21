@@ -10,7 +10,6 @@ export function Introduction() {
       <div className="intro-art">
         <MediaSlot image={business.images.introduction} className="intro-media" sizes="(max-width: 767px) 92vw, 48vw" />
         <MediaSlot image={business.images.introductionDetail} className="intro-detail" sizes="(max-width: 767px) 55vw, 280px" />
-        <p className="art-caption">Imágenes ilustrativas generadas con IA.</p>
       </div>
       <div className="intro-copy"><SectionHeading number="01" eyebrow="La experiencia" title="Un momento que comienza contigo." />
         <p>Agua tibia, un baño de pies y tiempo para dejar de mirar el reloj.</p>
