@@ -15,6 +15,15 @@ npm run build
 
 Vista local: http://127.0.0.1:3000. `npm start` sirve la versión de producción. La compilación necesita acceso a Google Fonts; `next/font/google` sirve después Cormorant Garamond y Manrope desde el propio sitio.
 
+## Despliegue en servidor Node.js
+
+- Instalación: `npm ci`.
+- Compilación: `npm run build`. Usa Webpack explícitamente para evitar el fallo de Turbopack observado al compilar los estilos en el servidor.
+- Inicio: `npm start`. Escucha en `0.0.0.0` para permitir el acceso del proxy o contenedor del alojamiento y utiliza el puerto de la variable `PORT` (3000 por defecto).
+- Configura Node.js 20.9 o superior y `NEXT_PUBLIC_SITE_URL` con el dominio definitivo antes de compilar.
+
+Si el panel de alojamiento tiene un comando de compilación personalizado, usa `npm run build` en lugar de `next build` para aplicar esta configuración. Después de subir los cambios a GitHub, vuelve a desplegar la revisión nueva.
+
 ## Diseño y contenido
 
 - **Header:** logo original compacto, navegación, CTA principal y menú móvil con Escape, cierre exterior y salida de foco.
