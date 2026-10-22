@@ -13,12 +13,13 @@ npm run typecheck
 npm run build
 ```
 
-Vista local: http://127.0.0.1:3000. `npm start` sirve la versión de producción. La compilación necesita acceso a Google Fonts; `next/font/google` sirve después Cormorant Garamond y Manrope desde el propio sitio.
+Vista local: http://127.0.0.1:3000. `npm start` sirve la versión de producción. Cormorant Garamond y Manrope se incluyen en `src/app/fonts/` y se cargan con `next/font/local`: la compilación no descarga fuentes de Google. Los archivos variables originales y sus licencias SIL Open Font License proceden de `google/fonts` (directorios `ofl/cormorantgaramond` y `ofl/manrope`).
 
 ## Despliegue en servidor Node.js
 
 - Instalación: `npm ci`.
 - Compilación: `npm run build`. Usa Webpack explícitamente para evitar el fallo de Turbopack observado al compilar los estilos en el servidor.
+- Las fuentes locales evitan también el error del cargador de Google Fonts (`Cannot read properties of null (reading '1')`) observado en el alojamiento.
 - Inicio: `npm start`. Escucha en `0.0.0.0` para permitir el acceso del proxy o contenedor del alojamiento y utiliza el puerto de la variable `PORT` (3000 por defecto).
 - Configura Node.js 20.9 o superior y `NEXT_PUBLIC_SITE_URL` con el dominio definitivo antes de compilar.
 

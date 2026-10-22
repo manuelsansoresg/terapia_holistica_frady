@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { business } from "@/config/business";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -11,8 +11,23 @@ import "./globals.css";
 
 config.autoAddCss = false;
 
-const heading = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-heading", display: "swap" });
-const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
+const heading = localFont({
+  src: "./fonts/cormorant-garamond-variable.ttf",
+  weight: "300 700",
+  style: "normal",
+  variable: "--font-heading",
+  display: "swap",
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: "Times New Roman",
+});
+const body = localFont({
+  src: "./fonts/manrope-variable.ttf",
+  weight: "200 800",
+  style: "normal",
+  variable: "--font-body",
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
+});
 
 const title = `Baño iónico para pies en ${business.city} | ${business.name}`;
 const description = `Conoce ${business.name} en ${business.city}, ${business.region}. Sesiones de baño iónico para pies de 30 a 45 minutos. Consulta precio y disponibilidad por WhatsApp.`;
