@@ -107,6 +107,17 @@ h1 em { color:var(--green); }
 .intro-copy > p { margin-top:25px; font-size:16px; }
 .intro-copy > p + p { margin-top:16px; }
 .intro-copy blockquote { margin-block:26px; border-left:1px solid var(--gold); padding-left:22px; font-size:34px; line-height:1.1; }
+.service-approach { margin-top:64px; padding-top:40px; border-top:1px solid var(--line); }
+.approach-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:40px; }
+.approach-heading h3 { margin-top:16px; font-size:clamp(2rem,3.5vw,3rem); }
+.approach-heading > p { max-width:330px; color:var(--muted); font-size:14px; }
+.approach-points { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); list-style:none; padding:0; margin:32px 0; gap:24px; }
+.approach-points li { border-top:1px solid var(--gold); padding-top:18px; }
+.approach-points span { font-size:12px; color:#8a6a22; }
+.approach-points h4 { margin-top:12px; font-size:27px; line-height:1.2; }
+.approach-message { border-left:2px solid var(--gold); padding:24px 28px; background:#fff; }
+.approach-message blockquote { margin-top:12px; font-size:32px; line-height:1.2; }
+.approach-note { margin-top:18px; max-width:900px; color:var(--muted); font-size:12px; line-height:1.8; }
 
 /* Benefits: one portrait and four open lines, with no repeated cards. */
 .benefits { background:var(--forest); color:var(--cream); }
@@ -176,6 +187,51 @@ h1 em { color:var(--green); }
 .session-action { display:flex; align-items:center; justify-content:space-between; gap:25px; margin-top:32px; }
 .session-action > p { font-family:var(--serif); color:var(--forest); font-size:28px; line-height:1.2; }
 
+/* Learning sections: imagery, readable references and a centered film. */
+.cellular-wellness { background:var(--cream); }
+.learning-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:60px; }
+.learning-heading .section-heading { max-width:730px; }
+.learning-heading > p { max-width:330px; color:var(--muted); font-size:14px; line-height:1.9; }
+.learning-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:48px; margin-top:48px; }
+.learning-article figure img { display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; }
+.learning-article:first-child figure img { border-radius:2px 50px 2px 2px; }
+.learning-article figcaption { margin-top:12px; color:var(--muted); font-size:11px; }
+.learning-copy { padding-top:28px; }
+.learning-copy h3 { font-size:35px; margin-top:16px; max-width:430px; }
+.learning-copy > p:not(.eyebrow) { margin-top:20px; font-size:14px; color:var(--muted); }
+.learning-copy blockquote { border-left:1px solid var(--gold); margin-top:24px; padding-left:20px; font-size:26px; line-height:1.3; }
+.learning-copy .inline-link { margin-top:16px; }
+.learning-note { margin-top:36px; border-top:1px solid var(--line); padding-top:20px; font-size:12px; color:var(--muted); }
+.water-colors { background:#fff; }
+.color-context { margin-top:36px; padding:22px 26px; background:var(--cream); border-left:2px solid var(--gold); }
+.color-context strong { color:var(--forest); font-size:15px; }
+.color-context p { margin-top:8px; color:var(--muted); font-size:13px; }
+.water-table-wrap { margin-top:32px; overflow-x:auto; border:1px solid var(--line); }
+.water-table { border-collapse:collapse; width:100%; min-width:650px; text-align:left; font-size:14px; line-height:1.65; }
+.water-table caption { text-align:left; padding:16px 24px; background:var(--cream); color:var(--muted); font-size:12px; }
+.water-table thead { background:var(--forest); color:var(--cream); }
+.water-table th,.water-table td { padding:18px 24px; vertical-align:middle; border-bottom:1px solid var(--line); }
+.water-table thead th { font-size:12px; font-weight:600; letter-spacing:.025em; width:35%; }
+.water-table thead th:first-child { width:30%; }
+.water-table tbody th { font-weight:600; color:var(--forest); }
+.water-table tbody th > span { display:inline-block; vertical-align:middle; }
+.water-table tbody th > span:last-child { max-width:calc(100% - 44px); }
+.water-table td { color:var(--muted); }
+.water-table tbody tr:nth-child(even) { background:#f8f5e966; }
+.water-table tbody tr:last-child > * { border-bottom:0; }
+.water-color-swatch { width:25px; height:25px; border-radius:50%; border:1px solid #19282026; margin-right:15px; }
+.color-table-note { margin-top:20px; color:var(--muted); font-size:12px; }
+.therapy-video { background:var(--cream); text-align:center; }
+.video-heading { max-width:850px; margin-inline:auto; }
+.video-heading .eyebrow { justify-content:center; }
+.video-heading .section-description { max-width:610px; margin-inline:auto; }
+.video-stage { margin:44px auto 0; max-width:960px; padding:40px 24px 28px; background:var(--forest); border-top:2px solid var(--gold); }
+.therapy-film { width:min(100%,350px); margin-inline:auto; }
+.therapy-film video { display:block; width:100%; height:auto; aspect-ratio:9/16; background:#071c15; object-fit:contain; border:1px solid #f8f5e930; border-radius:8px; box-shadow:0 12px 36px #0003; }
+.therapy-film figcaption { display:flex; flex-direction:column; gap:3px; margin-top:20px; color:#d4ded0; font-size:11px; }
+.therapy-film figcaption > span:first-child { color:var(--cream); font-size:21px; font-family:var(--serif); }
+.video-contact { margin-top:24px; }
+
 /* FAQ: practical answers that lead into the booking flow. */
 .faq { background:var(--cream); }
 .faq-grid { display:grid; grid-template-columns:.78fr 1.22fr; gap:100px; align-items:start; }
@@ -202,6 +258,9 @@ h1 em { color:var(--green); }
 .contact-grid .section-heading { max-width:560px; }
 .contact-actions { display:flex; flex-direction:column; align-items:flex-start; gap:10px; margin-top:30px; }
 .contact-phone { font-size:12px; color:var(--muted); }
+.contact-phone-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px 24px; width:100%; }
+.contact-phone-list .button-text { justify-content:flex-start; min-width:0; font-size:14px; white-space:nowrap; }
+.contact-phone-list .button-text > svg { font-size:18px; }
 .secondary-contact { display:flex; align-items:center; gap:15px; flex-wrap:wrap; margin-top:25px; border-top:1px solid var(--line); padding-top:15px; }
 .secondary-contact > span { font-size:12px; color:var(--muted); }
 .secondary-contact .button-text { font-size:14px; }
@@ -212,7 +271,9 @@ h1 em { color:var(--green); }
 .location-links { display:flex; flex-direction:column; align-items:flex-start; gap:8px; margin-top:20px; }
 .location-links .button-text { font-size:13px; }
 .location-links .text-link { font-size:12px; }
-.location-panel iframe { width:100%; height:280px; margin-top:20px; border:0; }
+.location-map { margin-top:26px; padding:6px; border:1px solid #c49a3a55; border-radius:14px; background:#fff; }
+.location-panel .location-map iframe { display:block; width:100%; height:340px; margin:0; border:0; border-radius:9px; }
+.location-map figcaption { padding:10px 10px 5px; color:var(--muted); font-size:11px; line-height:1.6; }
 
 /* Minimal enquiry form: no storage, only an explicit handoff to WhatsApp. */
 .contact-form { margin-top:30px; }
@@ -255,6 +316,7 @@ h1 em { color:var(--green); }
 .footer-nav a { display:inline-flex; align-items:center; min-height:36px; color:#e0e8db; font-size:13px; }
 .footer-nav a:hover,.back-top:hover { color:#dfc584; }
 .footer-contact .button-text { color:var(--cream); font-size:17px; }
+.footer-contact > .whatsapp-link { display:flex; width:fit-content; }
 .footer-contact > span { display:block; margin-top:9px; }
 .back-top { display:inline-flex; gap:15px; align-items:center; min-height:44px; font-size:12px; margin-top:12px; }
 .footer-bottom { border-top:1px solid #f8f5e92b; padding:20px 65px 0 0; display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; color:#d4ded0; font-size:11px; }
@@ -338,6 +400,22 @@ h1 em { color:var(--green); }
   .brand-logo-surface .official-logo { width:170px; }
 }
 @media (max-width:767px) {
+  .learning-heading { flex-direction:column; align-items:flex-start; gap:22px; }
+  .learning-heading > p { max-width:100%; }
+  .learning-grid { grid-template-columns:1fr; margin-top:30px; gap:44px; }
+  .learning-copy { padding-top:22px; }
+  .learning-copy h3 { font-size:31px; }
+  .color-context { padding:20px; margin-top:28px; }
+  .water-table th,.water-table td { padding:15px 18px; }
+  .water-table { font-size:13px; }
+  .video-stage { margin-top:30px; padding:24px 18px; }
+  .therapy-film { max-width:300px; }
+  .service-approach { margin-top:36px; padding-top:28px; }
+  .approach-heading { flex-direction:column; align-items:flex-start; gap:18px; }
+  .approach-points { grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px 18px; }
+  .approach-points h4 { font-size:23px; }
+  .approach-message { padding:22px 20px; }
+  .approach-message blockquote { font-size:28px; }
   html { scroll-padding-top:86px; }
   .container { width:calc(100% - 40px); }
   .section { padding-block:62px; }
@@ -423,6 +501,9 @@ h1 em { color:var(--green); }
   .faq-action .button-text { font-size:13px; }
   .contact-grid { grid-template-columns:1fr; gap:35px; }
   .contact-phone { font-size:11px; }
+  .contact-phone-list { gap:12px 16px; }
+  .contact-phone-list .button-text { gap:8px; font-size:13px; }
+  .location-panel .location-map iframe { height:300px; }
   .location-panel { padding-top:23px; }
   .location-city { font-size:76px; margin-block:24px; }
   .location-links { gap:7px; }
@@ -467,3 +548,44 @@ h1 em { color:var(--green); }
   *,*::before,*::after { animation:none !important; transition:none !important; }
   .reveal-pending { opacity:1; translate:none; }
 }
+
+/* CRO refinements: service clarity, shorter reading path, optional reference material. */
+h1 { white-space:normal; font-size:clamp(3.3rem,5.5vw,5.4rem); line-height:1; }
+.hero-service { margin-top:22px; }
+.hero-gift { margin-top:18px; padding:10px 16px; background:transparent; }
+.hero-gift strong { font-size:13px; font-weight:500; line-height:1.7; }
+.hero-gift > span { font-size:12px; margin-top:3px; }
+.hero-actions { margin-top:22px; }
+.hero-location { margin-top:18px; }
+.approach-points p { color:var(--muted); font-size:14px; margin-top:12px; }
+.reference-disclosure { margin-top:24px; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+.reference-disclosure + .reference-disclosure { border-top:0; margin-top:0; }
+.reference-disclosure > summary { cursor:pointer; min-height:56px; padding:18px 8px; font-size:15px; font-weight:500; line-height:1.6; }
+.reference-disclosure[open] > summary { border-bottom:1px solid var(--line); }
+.reference-disclosure .foot-care,.reference-disclosure .bath-progression { border:0; margin:0; padding:28px 0; }
+.reference-material .cellular-wellness,.reference-material .water-colors { padding:28px 0; background:transparent; }
+.reference-material .container .container { width:100%; }
+.reference-material .learning-heading h2,.reference-material .water-colors h2 { font-size:clamp(2rem,4vw,3rem); }
+.form-consent { display:flex; align-items:flex-start; gap:12px; margin-top:18px; font-size:13px; color:var(--muted); cursor:pointer; line-height:1.7; }
+.form-consent input { flex:0 0 20px; width:20px; height:20px; margin-top:3px; accent-color:var(--forest); }
+.form-trap { position:absolute; width:1px; height:1px; overflow:hidden; clip-path:inset(50%); }
+.form-field,.contact-grid > * { min-width:0; }
+html { scroll-padding-bottom:100px; }
+@media (max-width:1023px) and (min-width:768px) { h1 { font-size:clamp(2.8rem,5.5vw,4rem); } }
+@media (max-width:767px) {
+  h1 { font-size:clamp(2.65rem,11.2vw,4.2rem); line-height:1.02; }
+  .hero-eyebrow { font-size:10px; margin-bottom:15px; }
+  .hero-service { margin-top:16px; }
+  .hero-description { line-height:1.75; }
+  .hero-gift { margin-top:16px; }
+  .hero-actions { margin-top:18px; gap:6px 16px; }
+  .hero-visual { margin-top:10px; }
+  .reference-disclosure > summary { font-size:14px; }
+  .approach-points { grid-template-columns:1fr 1fr; }
+  .approach-points h4 { font-size:25px; }
+  body:has(.contact-form input:focus) .mobile-booking { display:none; }
+}
+
+.contact-direct { margin-top:24px; }
+.contact-direct + .contact-form { margin-top:20px; }
+@media (max-width:359px) { .contact-direct .whatsapp-link { font-size:13px; padding-inline:12px; gap:8px; } }

@@ -29,24 +29,10 @@ const body = localFont({
   fallback: ["Arial", "sans-serif"],
 });
 
-const title = `Baño iónico para pies en ${business.city} | ${business.name}`;
-const description = `Conoce ${business.name} en ${business.city}, ${business.region}. Sesiones de baño iónico para pies de ${business.sessionDuration}. Consulta precio y disponibilidad por WhatsApp.`;
-
 export const metadata: Metadata = {
-  title,
-  description,
+  metadataBase: new URL(business.siteUrl),
+  title: { default: business.name, template: `%s | ${business.name}` },
   applicationName: business.name,
-  ...(business.siteUrl ? { metadataBase: new URL(business.siteUrl), alternates: { canonical: "/" } } : {}),
-  openGraph: {
-    type: "website",
-    locale: business.locale,
-    siteName: business.name,
-    title,
-    description,
-    ...(business.siteUrl ? { url: business.siteUrl } : {}),
-    ...(business.openGraphImage ? { images: [{ url: business.openGraphImage.src, width: business.openGraphImage.width, height: business.openGraphImage.height, alt: business.openGraphImage.alt }] } : {}),
-  },
-  twitter: { card: business.openGraphImage ? "summary_large_image" : "summary", title, description },
 };
 
 export const viewport: Viewport = { themeColor: "#0F3D2E", width: "device-width", initialScale: 1 };

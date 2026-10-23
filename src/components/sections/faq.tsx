@@ -13,7 +13,7 @@ const questions = [
   { question: "¿Cómo debo prepararme?", answer: "Ven con ropa cómoda que permita descubrir pies y tobillos, y mantén tu hidratación habitual. Al reservar, confirma las indicaciones sobre comidas, alcohol y cafeína. Después, seca bien tus pies y retoma tus actividades con calma." },
   { question: "¿Cada cuánto puedo agendar?", answer: "Puedes consultar la opción de organizar cuatro visitas, una por semana, o preguntar por fechas cada dos o tres semanas si deseas regresar. El equipo te ayudará a coordinar la disponibilidad y los detalles antes de reservar." },
   { question: "¿Quiénes pueden realizarla?", answer: "Consulta antes con un profesional de salud si estás embarazada, deseas reservar para un menor o tienes una condición médica. Evita el baño iónico si tienes marcapasos u otro dispositivo eléctrico implantado, heridas abiertas en los pies o neuropatía diabética. Es una experiencia de autocuidado y no sustituye atención médica." },
-  { question: "¿Cómo consulto el precio y reservo mi cita?", answer: "Escríbenos por WhatsApp o completa el formulario de contacto. Te ayudamos a consultar el precio vigente, elegir un horario y confirmar los detalles para tu visita." },
+  { question: "¿Cómo consulto el precio y reservo mi cita?", answer: "Escríbenos por WhatsApp. Si lo prefieres, prepara tu consulta con el formulario: abrirá WhatsApp para que revises y envíes el mensaje. La cita queda confirmada cuando acordemos contigo el horario y los detalles." },
 ];
 
 export function Faq() {
@@ -26,9 +26,9 @@ export function Faq() {
     </div>;
   }
   return <section id="preguntas" className="section faq" aria-label="Preguntas frecuentes"><div className="container faq-grid">
-    <div className="faq-intro"><SectionHeading number="04" eyebrow="Antes de tu visita" title="Respuestas para venir con calma." description="Lo que necesitas saber para decidir y preparar tu primera sesión." /><p className="faq-aside">La confianza también empieza por una conversación clara.</p></div>
+    <div className="faq-intro"><SectionHeading number="06" eyebrow="Antes de tu visita" title="Respuestas para venir con calma." description="Lo que necesitas saber para decidir y preparar tu primera sesión." /><p className="faq-aside">La confianza también empieza por una conversación clara.</p></div>
     <div><div className="faq-list">{questions.map(renderQuestion)}</div>
-      <div className="faq-action"><p className="faq-booking-note">Consulta disponibilidad y elige un horario.</p><WhatsAppLink placement="faq">Agendar mi sesión</WhatsAppLink></div>
+      <div className="faq-action"><p className="faq-booking-note">Consulta disponibilidad y elige un horario.</p><WhatsAppLink placement="faq" intent="booking">Agenda tu sesión</WhatsAppLink></div>
     </div>
   </div></section>;
 }

@@ -9,11 +9,11 @@ export function Hero() {
     <div className="container hero-grid">
       <div className="hero-copy">
         <p className="eyebrow hero-eyebrow">Terapia Holística Frady <span aria-hidden="true">·</span> Nuevo Laredo</p>
-        <h1 id="hero-title">Baja el ritmo.<br /><em>Vuelve a ti.</em></h1>
-        <p className="hero-service">Sesiones de desintoxicación<br className="desktop-break" /> iónica para pies</p>
-        <p className="hero-description">Dedica {business.sessionDuration} a una experiencia de baño iónico para pies, pensada para desconectarte de la rutina y disfrutar de un momento de tranquilidad.</p>
-        <a className="hero-gift" href="#regalo"><strong>¡Un regalo especial para ti! 🌿</strong><span>Tu sesión incluye un relajante masaje en los pies y una deliciosa taza de té de cortesía.</span><span className="inline-link">Conoce tu regalo</span></a>
-        <div className="hero-actions"><WhatsAppLink placement="hero">Agendar mi sesión</WhatsAppLink><a className="text-link" href="#experiencia">Descubre la experiencia <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a></div>
+        <h1 id="hero-title">Baño iónico de pies.<br /><em>Un rato para ti.</em></h1>
+        <p className="hero-service">Relajación y autocuidado en {business.city}</p>
+        <p className="hero-description">¿Necesitas una pausa después de un día largo? Descansa con los pies en agua tibia durante {business.sessionDuration}, con atención cercana de principio a fin.</p>
+        <div className="hero-actions"><WhatsAppLink placement="hero" intent="booking">Agenda tu sesión</WhatsAppLink><a className="text-link" href="#experiencia" data-service-link>Conoce el baño iónico <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a></div>
+        <a className="hero-gift" href="#regalo"><strong>Tu sesión incluye masaje de pies y té de cortesía.</strong><span>Conoce lo que te espera en tu visita <span aria-hidden="true">→</span></span></a>
         <p className="hero-location">{business.sessionDuration} <span>·</span> Nuevo Laredo <span>·</span> Atención con cita</p>
       </div>
       <div className="hero-visual">

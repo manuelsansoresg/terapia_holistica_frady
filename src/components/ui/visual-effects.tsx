@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import { trackConversion } from "@/lib/analytics";
 
 /** Progressive enhancement: content remains visible without JavaScript. */
 export function VisualEffects() {
@@ -24,7 +25,15 @@ export function VisualEffects() {
         }
       });
     }
+    const serviceLink = document.querySelector("[data-service-link]");
+    const onSelect = () => trackConversion({ name: "service_select", placement: "hero", service: "ionic-footbath" });
+    serviceLink?.addEventListener("click", onSelect);
+    const video = document.querySelector("#terapia-en-video video");
+    const onPlay = () => trackConversion({ name: "video_play", placement: "video", service: "ionic-footbath" });
+    video?.addEventListener("play", onPlay, { once: true });
     return () => {
+      serviceLink?.removeEventListener("click", onSelect);
+      video?.removeEventListener("play", onPlay);
       window.removeEventListener("scroll", onScroll);
       observer?.disconnect();
       elements.forEach(element => element.classList.remove("reveal-pending"));

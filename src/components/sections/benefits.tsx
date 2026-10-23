@@ -9,17 +9,17 @@ const themes = [
   { title: "Relajación y bienestar", text: "El contacto con agua tibia puede favorecer una sensación de descanso y relajación.", icon: faLeaf },
   { title: "Confort en los pies", text: "Un momento de descanso después de pasar muchas horas de pie. Consulta las precauciones antes de agendar.", icon: faShoePrints },
   { title: "Experiencia de autocuidado", text: "Desconectarte del estrés cotidiano y dedicar tiempo a tu bienestar personal.", icon: faHeart },
-  { title: "Equilibrio y armonía", text: "Desde nuestro enfoque holístico, un espacio para reconectar con cuerpo, mente y espíritu.", icon: faWater },
+  { title: "Atención cercana", text: "Pregunta lo que necesites y avisa si algo te incomoda durante la sesión.", icon: faWater },
 ];
 export function Benefits() {
   return <section id="bienestar" className="section benefits" aria-label="Objetivos de bienestar"><div className="container">
-    <div className="benefits-heading"><SectionHeading number="02" eyebrow="Lo que buscamos" title="Hay pausas que merecen un lugar en tu día." /><p>No hace falta una ocasión especial.<br />Solo un momento que sea tuyo.</p></div>
+    <div className="benefits-heading"><SectionHeading number="02" eyebrow="Lo que buscamos" title="Una pausa después de un día largo." /><p>No hace falta una ocasión especial.<br />Solo un momento que sea tuyo.</p></div>
     <div className="benefits-composition">
       <figure className="benefits-art benefits-poster"><Image src={business.images.benefitsPoster.src} alt={business.images.benefitsPoster.alt} width={business.images.benefitsPoster.width} height={business.images.benefitsPoster.height} sizes="(max-width: 767px) 90vw, 40vw" /><figcaption>Tu bienestar comienza por tus pies.</figcaption></figure>
       <div className="benefit-list">{themes.map((theme, index) => <div className="benefit-item" key={theme.title}><span className="item-number">0{index + 1}</span><div><h3><FontAwesomeIcon icon={theme.icon} aria-hidden="true" />{theme.title}</h3><p>{theme.text}</p></div></div>)}<WhatsAppLink placement="benefits" variant="text">Consultar disponibilidad</WhatsAppLink></div>
     </div>
     <p className="wellness-note">Objetivos de relajación y autocuidado. Las sensaciones son individuales; no se garantizan resultados médicos.</p>
-    <div className="foot-care" aria-labelledby="foot-care-title">
+    <details className="reference-disclosure"><summary>¿Qué es la reflexología que acompaña el masaje?</summary><div className="foot-care" aria-labelledby="foot-care-title">
       <div className="foot-care-copy">
         <p className="eyebrow">Cuidado de los pies · Reflexología</p>
         <h3 id="foot-care-title">Tus pies también merecen una pausa.</h3>
@@ -35,6 +35,6 @@ export function Benefits() {
         <Image src={business.images.reflexology.src} alt={business.images.reflexology.alt} width={business.images.reflexology.width} height={business.images.reflexology.height} sizes="(max-width: 767px) 90vw, 40vw" />
         <figcaption>Mapa tradicional de reflexología. Imagen de referencia proporcionada para conocer esta práctica.</figcaption>
       </figure>
-    </div>
+    </div></details>
   </div></section>;
 }

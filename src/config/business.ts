@@ -13,6 +13,13 @@ function illustration(file: string, width: number, height: number, alt: string):
   return { src: `/images/frady/${file}.webp`, width, height, alt };
 }
 
+export const contactPhones = [
+  { whatsapp: true, international: "528674748059", display: "867 474 8059" },
+  { whatsapp: true, international: "528672291078", display: "867 229 1078" },
+  { whatsapp: true, international: "528672447894", display: "867 244 7894" },
+  { whatsapp: false, international: "528345472783", display: "834 547 2783" },
+] as const;
+
 export const business = {
   name: "Terapia Holística Frady",
   service: "Desintoxicación iónica",
@@ -22,18 +29,18 @@ export const business = {
   locale: "es_MX",
   timezone: "America/Matamoros",
   phone: {
-    international: "528672447894",
-    display: "867 244 7894",
-    message: "Hola, me gustaría recibir información y agendar una sesión en Terapia Holística Frady.",
+    ...contactPhones[0],
+    message: "Hola, me interesa conocer la disponibilidad para una sesión de baño iónico de pies.",
   },
   sessionDuration: "20–30 minutos",
   sessionDurationRange: "20–30",
-  secondaryPhone: { international: "528345472783", display: "834 547 2783" },
+  secondaryPhone: contactPhones[1],
   location: {
+    postalCode: "88030",
     address: "Bocanegra 918, local 3, col. Victoria, C.P. 88030" as string | null,
-    mapsUrl: null as string | null,
+    mapsUrl: "https://www.google.com/maps/@27.4913006,-99.4898634,3a,75y,226.42h,74.75t/data=!3m4!1e1!3m2!1sOawnz1KqICWX9eaSSdh3KQ!2e0" as string | null,
     /** Only configure a verified venue map. */
-    mapEmbedUrl: null as string | null,
+    mapEmbedUrl: "https://www.google.com/maps?q=27.4913006,-99.4898634&z=17&output=embed" as string | null,
   },
   logo: { src: "/images/logo.png", alt: "Terapia Holística Frady", width: 840, height: 260 } as BrandImage,
   images: {
@@ -63,9 +70,9 @@ export const business = {
     ],
     final: illustration("cta-final-ambiente", 718, 377, "Vela encendida y piedras sobre una superficie natural."),
   },
-  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || null,
+  siteUrl: process.env.NEXT_PUBLIC_SITE_URL || "https://fradybienestar.com",
   privacyUrl: null as string | null,
-  openGraphImage: null as BrandImage | null,
+  openGraphImage: illustration("hero-bano-ionico-horizontal", 1100, 328, "Baño iónico de pies de Terapia Holística Frady") as BrandImage | null,
 } as const;
 
 export const navigation = [
