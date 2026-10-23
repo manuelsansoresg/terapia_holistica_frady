@@ -4,9 +4,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { WhatsAppLink } from "@/components/ui/whatsapp-link";
+import { business } from "@/config/business";
 
 const questions = [
-  { question: "¿Cuánto dura una sesión?", answer: "Aproximadamente de 30 a 45 minutos. Un espacio en tu día para sentarte, bajar el ritmo y disfrutar de tu baño iónico para pies." },
+  { question: "¿Cuánto dura una sesión?", answer: `Aproximadamente ${business.sessionDuration}. Un espacio en tu día para sentarte, bajar el ritmo y disfrutar de tu baño iónico para pies.` },
   { question: "¿Es dolorosa? ¿Qué voy a sentir?", answer: "Permaneces sentado con los pies en agua tibia, en una experiencia pensada para la comodidad y la relajación. Si sientes dolor, irritación o el agua está demasiado caliente, avisa al equipo y detén la sesión." },
   { question: "¿Qué puedo esperar desde la primera sesión?", answer: "Un momento de descanso y desconexión de la rutina. Cada persona vive la experiencia de forma diferente; ven con tiempo para disfrutar tu pausa y compartir tus dudas con el equipo." },
   { question: "¿Cómo debo prepararme?", answer: "Ven con ropa cómoda que permita descubrir pies y tobillos, y mantén tu hidratación habitual. Al reservar, confirma las indicaciones sobre comidas, alcohol y cafeína. Después, seca bien tus pies y retoma tus actividades con calma." },

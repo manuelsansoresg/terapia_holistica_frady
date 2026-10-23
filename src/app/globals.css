@@ -70,6 +70,10 @@ h1 { font-size:clamp(4.1rem,7.15vw,6.9rem); line-height:.94; white-space:nowrap;
 h1 em { color:var(--green); }
 .hero-service { margin-top:30px; font-size:19px; line-height:1.5; font-weight:500; max-width:420px; }
 .hero-description { margin-top:17px; font-size:15px; line-height:1.9; color:var(--muted); max-width:425px; }
+.hero-gift { display:block; margin-top:22px; padding:16px 20px; border-left:2px solid var(--gold); background:#fff; max-width:460px; }
+.hero-gift strong { display:block; color:var(--forest); font-size:15px; }
+.hero-gift > span { display:block; font-size:13px; line-height:1.7; margin-top:6px; }
+.hero-gift .inline-link { margin-top:0; }
 .hero-actions { display:flex; align-items:center; flex-wrap:wrap; gap:15px 22px; margin-top:26px; }
 .hero-actions .text-link { font-size:12px; }
 .hero-location { margin-top:26px; font-size:11px; color:var(--muted); display:flex; gap:8px; flex-wrap:wrap; }
@@ -113,6 +117,8 @@ h1 em { color:var(--green); }
 .benefits-heading > p { color:#d4ded0; font-size:15px; line-height:1.9; flex-shrink:0; }
 .benefits-composition { display:grid; grid-template-columns:1fr 1fr; gap:100px; align-items:center; margin-top:50px; }
 .benefits-art { max-width:490px; }
+.benefits-poster img { display:block; width:100%; height:auto; border-radius:2px; }
+.benefits-poster figcaption { margin-top:12px; color:#d4ded0; font-size:13px; }
 .benefits-media { aspect-ratio:1.25; border-radius:1px 70px 1px 1px; }
 .benefits .art-caption { color:#c9d6c5; margin-top:12px; }
 .benefit-item { display:flex; gap:20px; padding:22px 0; border-bottom:1px solid #f8f5e92b; }
@@ -123,6 +129,17 @@ h1 em { color:var(--green); }
 .benefit-item p { color:#d4ded0; margin-top:9px; font-size:14px; }
 .benefit-list .button-text { color:var(--cream); margin-top:20px; font-size:13px; }
 .wellness-note { border-top:1px solid #f8f5e92b; margin-top:40px; padding-top:20px; font-size:12px; color:#c9d6c5; }
+.foot-care { display:grid; grid-template-columns:1.2fr 1fr; gap:50px; align-items:start; margin-top:60px; padding-top:50px; border-top:1px solid #f8f5e92b; }
+.foot-care-copy > h3 { font-size:clamp(2rem,3.2vw,2.75rem); margin-top:18px; }
+.foot-care-copy > p:not(.eyebrow) { margin-top:20px; color:#d4ded0; font-size:14px; }
+.foot-care-lists { display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-top:28px; }
+.foot-care-lists h4 { font-family:var(--font-body),sans-serif; font-size:14px; line-height:1.7; font-weight:600; color:var(--cream); }
+.foot-care-lists ul { padding-left:18px; margin:12px 0 0; color:#d4ded0; font-size:13px; list-style:disc; }
+.foot-care-lists li + li { margin-top:8px; }
+.foot-care-copy > .foot-care-note { font-size:12px; border-left:1px solid var(--gold); padding-left:16px; }
+.reflexology-figure { max-width:440px; justify-self:center; }
+.reflexology-figure img { display:block; width:100%; height:auto; border-radius:2px 40px 2px 2px; }
+.reflexology-figure figcaption { margin-top:12px; font-size:12px; color:#c9d6c5; line-height:1.7; }
 
 /* Session: a staggered photographic sequence, then practical guidance. */
 .session { background:#fff; }
@@ -140,6 +157,17 @@ h1 em { color:var(--green); }
 .step-copy h3 { font-size:27px; line-height:1.05; }
 .step-copy p { margin-top:14px; color:var(--muted); font-size:14px; line-height:1.8; }
 .process-caption { margin-top:28px; }
+.session-gift { display:flex; gap:24px; align-items:flex-start; margin-top:40px; padding:32px; background:var(--cream); border-left:2px solid var(--gold); }
+.session-gift > svg { font-size:26px; color:#8a6a22; margin-top:5px; }
+.session-gift h3 { margin-top:10px; font-size:34px; }
+.session-gift h3 + p { margin-top:14px; color:var(--muted); font-size:14px; max-width:800px; }
+.gift-closing { margin-top:16px; color:var(--forest); font-size:15px; }
+.bath-progression { margin-top:48px; padding-top:36px; border-top:1px solid var(--line); }
+.bath-progression h3 { margin-top:14px; font-size:36px; }
+.bath-progression h3 + p { max-width:700px; margin-top:16px; color:var(--muted); font-size:14px; }
+.bath-progression figure { max-width:960px; margin:28px auto 0; }
+.bath-progression img { display:block; width:100%; height:auto; }
+.bath-progression figcaption { margin-top:16px; color:var(--muted); font-size:12px; line-height:1.8; }
 .visit-guide { display:grid; grid-template-columns:.85fr 1fr 1fr; gap:40px; padding-block:32px; margin-top:40px; border-block:1px solid var(--line); }
 .guide-intro { font-family:var(--serif); color:var(--forest); font-size:30px; line-height:1.15; margin-top:15px; }
 .guide-column h3 { font-family:var(--font-body),sans-serif; font-size:14px; font-weight:600; line-height:1.6; }
@@ -362,6 +390,12 @@ h1 em { color:var(--green); }
   .benefit-item h3 { font-size:29px; }
   .benefit-item p { font-size:14px; }
   .wellness-note { margin-top:28px; padding-top:18px; font-size:11px; }
+  .foot-care { grid-template-columns:1fr; gap:30px; margin-top:36px; padding-top:30px; }
+  .foot-care-lists { grid-template-columns:1fr; gap:20px; }
+  .reflexology-figure { width:100%; }
+  .session-gift { gap:16px; margin-top:30px; padding:24px 20px; }
+  .session-gift > svg { font-size:20px; }
+  .session-gift h3 { font-size:30px; }
   .session-heading { flex-direction:column; align-items:flex-start; gap:24px; }
   .duration-label { padding-left:0; border-left:0; }
   .duration-label strong { display:inline-block; font-family:var(--font-body),sans-serif; font-size:14px; margin:0 0 0 8px; }

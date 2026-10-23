@@ -11,13 +11,14 @@ export function Hero() {
         <p className="eyebrow hero-eyebrow">Terapia Holística Frady <span aria-hidden="true">·</span> Nuevo Laredo</p>
         <h1 id="hero-title">Baja el ritmo.<br /><em>Vuelve a ti.</em></h1>
         <p className="hero-service">Sesiones de desintoxicación<br className="desktop-break" /> iónica para pies</p>
-        <p className="hero-description">Dedica de 30 a 45 minutos a una experiencia de baño iónico para pies, pensada para desconectarte de la rutina y disfrutar de un momento de tranquilidad.</p>
+        <p className="hero-description">Dedica {business.sessionDuration} a una experiencia de baño iónico para pies, pensada para desconectarte de la rutina y disfrutar de un momento de tranquilidad.</p>
+        <a className="hero-gift" href="#regalo"><strong>¡Un regalo especial para ti! 🌿</strong><span>Tu sesión incluye un relajante masaje en los pies y una deliciosa taza de té de cortesía.</span><span className="inline-link">Conoce tu regalo</span></a>
         <div className="hero-actions"><WhatsAppLink placement="hero">Agendar mi sesión</WhatsAppLink><a className="text-link" href="#experiencia">Descubre la experiencia <FontAwesomeIcon icon={faArrowRight} aria-hidden="true" /></a></div>
         <p className="hero-location">{business.sessionDuration} <span>·</span> Nuevo Laredo <span>·</span> Atención con cita</p>
       </div>
       <div className="hero-visual">
         <MediaSlot image={business.images.hero} className="hero-media" sizes="(max-width: 767px) 100vw, (max-width: 1400px) 48vw, 620px" priority />
-        <div className="hero-duration"><FontAwesomeIcon icon={faClock} aria-hidden="true" /><span><strong>30–45</strong> minutos para hacer una pausa</span></div>
+        <div className="hero-duration"><FontAwesomeIcon icon={faClock} aria-hidden="true" /><span><strong>{business.sessionDurationRange}</strong> minutos para hacer una pausa</span></div>
         <div className="hero-caption"><span>Baño iónico para pies</span></div>
       </div>
     </div>

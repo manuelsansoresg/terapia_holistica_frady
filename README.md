@@ -30,8 +30,8 @@ Si el panel de alojamiento tiene un comando de compilación personalizado, usa `
 - **Header:** logo original compacto, navegación, CTA principal y menú móvil con Escape, cierre exterior y salida de foco.
 - **Hero:** composición editorial con retrato del baño iónico, dispositivo visible, información del servicio, duración y acceso inmediato a WhatsApp.
 - **Experiencia:** fotografía horizontal y detalle de sales superpuesto; explicación breve del procedimiento.
-- **Bienestar:** cuatro conceptos de autocuidado, una fotografía integrada y CTA contextual sobre verde bosque.
-- **Sesión:** cuatro imágenes en secuencia escalonada en escritorio y recorrido vertical en móvil; guía resumida antes/después y CTA de precio/disponibilidad.
+- **Bienestar:** cuatro conceptos de autocuidado, una fotografía integrada y CTA contextual sobre verde bosque. Incluye cuidado de los pies, situaciones cotidianas, molestias que atender y el mapa tradicional de reflexología del usuario. Las correspondencias se presentan como tradición, sin promesas diagnósticas o médicas; referencia: https://www.nccih.nih.gov/health/reflexology.
+- **Sesión:** cuatro imágenes en secuencia escalonada en escritorio y recorrido vertical en móvil; el cierre y un recuadro destacado explican el masaje de pies y la taza de té de cortesía confirmados por el usuario. Guía resumida antes/después y CTA de precio/disponibilidad.
 - **Recorrido directo:** por petición del usuario, se retiró la galería de atmósfera. La sesión enlaza directamente con las preguntas y el contacto, sin fotografías de supuestas instalaciones.
 - **FAQ:** siete preguntas prácticas adaptadas de los folletos: duración, sensaciones, primera visita, preparación, frecuencia, precauciones y reserva. Sin apartado de evidencia científica en la landing. Se conservan las precauciones importantes y no se prometen resultados médicos. CTA directo para agendar al final.
 - **Contacto:** domicilio confirmado por el usuario, teléfonos y formulario breve con nombre y teléfono. El botón prepara la consulta en WhatsApp; la persona revisa y envía el mensaje.
@@ -45,11 +45,13 @@ Todas las rutas y dimensiones reales están centralizadas en `src/config/busines
 | --- | --- | --- |
 | Hero | `hero-bano-ionico.webp` | 1400 × 1749 |
 | Experiencia | `experiencia-bano-pies.webp`; `experiencia-sales-preparacion.webp` | 713 × 480; 727 × 329 |
-| Bienestar | `beneficio-relajacion.webp` | 694 × 482 |
+| Bienestar | `beneficios-bano-pies.png` | 971 × 1619 |
+| Progresión del baño | `progresion-bano-pies-ph.png` | 1448 × 1086 |
+| Cuidado de los pies | `mapa-reflexologia.png` (referencia del usuario, versión verde y dorada) | 1121 × 1403 |
 | Sesión 01–04 | `proceso-preparacion.webp`; `proceso-dispositivo.webp`; `proceso-sesion.webp`; `proceso-finalizacion.webp` | 718 × 394; 636 × 485; 720 × 394; 679 × 377 |
 | CTA final | `cta-final-ambiente.webp` | 718 × 377 |
 
-Se integran 9 imágenes. Las cuatro imágenes de galería permanecen en disco y en el catálogo, sin utilizarse en la landing. Las otras cuatro (`hero-bano-ionico-horizontal.webp`, `experiencia-pies-primer-plano.webp`, `experiencia-cuidados.webp`, `beneficio-ambiente-natural.webp`) permanecen catalogadas en la configuración como alternativas, evitando añadir fotografías de relleno. La panorámica del Hero mide 1100 × 328: se prioriza la alternativa vertical para conservar el detalle del dispositivo. Las fotografías secundarias se muestran en superficies apropiadas para sus resoluciones; los encuadres evitan los márgenes vacíos de algunos recursos. No se modifican los originales.
+Se integran 11 imágenes: ocho ilustraciones existentes y tres recursos aportados por el usuario (folleto de beneficios, mapa tradicional de reflexología y progresión del baño con escala de pH). Las cuatro imágenes de galería permanecen en disco y en el catálogo, sin utilizarse en la landing. Las otras cuatro (`hero-bano-ionico-horizontal.webp`, `experiencia-pies-primer-plano.webp`, `experiencia-cuidados.webp`, `beneficio-ambiente-natural.webp`) permanecen catalogadas en la configuración como alternativas, evitando añadir fotografías de relleno. La panorámica del Hero mide 1100 × 328: se prioriza la alternativa vertical para conservar el detalle del dispositivo. Las fotografías secundarias se muestran en superficies apropiadas para sus resoluciones; los encuadres evitan los márgenes vacíos de algunos recursos. No se modifican los originales.
 
 `next/image` genera variantes responsive; cada composición tiene `sizes` y espacio reservado por proporción. El Hero y el logo del header se precargan; las fotografías secundarias usan carga diferida. Los antiguos recursos Pexels se conservan en disco pero ya no se referencian en la landing.
 
@@ -91,6 +93,12 @@ No se afirma una puntuación de Lighthouse ni una mejora de ventas medida. Para 
 
 ## Información real pendiente
 
-Horarios, precio, fotografías reales autorizadas, dominio final (`NEXT_PUBLIC_SITE_URL`), aviso de privacidad, imagen de Open Graph y un mapa embebido verificado si se desea incorporarlo. La duración aproximada de 30–45 minutos procede de los folletos del usuario. El usuario confirmó Bocanegra 918, local 3, col. Victoria, C.P. 88030, Nuevo Laredo, Tamaulipas. La dirección está en contacto y footer; Google Maps busca ese domicilio completo, sin inventar coordenadas ni identificadores de un lugar.
+Horarios, precio, fotografías reales autorizadas, dominio final (`NEXT_PUBLIC_SITE_URL`), aviso de privacidad, imagen de Open Graph y un mapa embebido verificado si se desea incorporarlo. La duración aproximada es de 20–30 minutos, actualizada por el usuario. Se centraliza en business.ts para portada, sesión, FAQ y metadatos. El usuario confirmó Bocanegra 918, local 3, col. Victoria, C.P. 88030, Nuevo Laredo, Tamaulipas. La dirección está en contacto y footer; Google Maps busca ese domicilio completo, sin inventar coordenadas ni identificadores de un lugar.
 
 Las sesiones se describen como relajación y autocuidado. No se promete extracción de toxinas, grasas o metales pesados, efectos médicos ni seguridad universal. Se conservan las precauciones; referencia de la revisión previa: https://health.clevelandclinic.org/foot-detox . Las opciones de varias citas son consultas de agenda, no pautas médicas ni garantías de resultados.
+
+## Contenido actualizado el 23 de octubre de 2026
+
+Se incorporan los folletos `beneficios-bano-pies.png` y `progresion-bano-pies-ph.png`, completos y sin recortes, en Bienestar y Tu sesión. El cambio de color del agua se presenta como ilustración del proceso y no como medición del pH corporal o eliminación de toxinas. El regalo de masaje de pies y té de cortesía se destaca desde la portada con enlace directo a `#regalo`, donde aparece el texto solicitado.
+
+El usuario sustituyó posteriormente `beneficios-bano-pies.png` por una fotografía del baño iónico. Se importa estáticamente desde `business.ts`: Next.js obtiene sus dimensiones y genera una dirección con una huella del contenido. Al sustituir el archivo y recompilar, cambia esa dirección y se evita reutilizar la versión optimizada anterior. En desarrollo, el cambio se refleja al guardar el archivo; en producción requiere volver a compilar y desplegar.
