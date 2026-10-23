@@ -54,7 +54,7 @@ export function MobileMenu() {
         {navigation.map((item) => (
           <a key={item.href} href={item.href} onClick={() => setOpen(false)}>{item.label}</a>
         ))}
-        <div onClick={() => setOpen(false)}><WhatsAppLink placement="mobile-menu" /></div>
+        <div onClick={() => setOpen(false)}><WhatsAppLink placement="mobile-menu" intent="booking">Agenda tu sesión</WhatsAppLink></div>
       </nav>
     </div>
   );

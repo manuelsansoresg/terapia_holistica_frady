@@ -6,3 +6,6 @@ coverage/
 .env*
 !.env.example
 .DS_Store
+
+# Local source video exceeds GitHub's 100 MB file limit; deploy the web copy.
+/public/video/frady-cuadrado.mp4

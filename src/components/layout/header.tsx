@@ -11,7 +11,7 @@ export function Header() {
         <nav className="desktop-nav" aria-label="Navegación principal">
           {navigation.map((item) => <a key={item.href} href={item.href}>{item.label}</a>)}
         </nav>
-        <WhatsAppLink placement="header" className="header-cta" />
+        <WhatsAppLink placement="header" intent="booking" className="header-cta">Agenda tu sesión</WhatsAppLink>
         <MobileMenu />
       </div>
     </header>

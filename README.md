@@ -1,70 +1,38 @@
 # Terapia Holística Frady
 
-Landing editorial de bienestar implementada sobre el proyecto Next.js existente. Conserva las ocho secciones, la navegación, los eventos locales de conversión y los enlaces y mensaje de WhatsApp originales.
+Landing de Next.js 16 y React 19 para baño iónico de pies en Nuevo Laredo, Tamaulipas. Identidad editorial en crema, verde y dorado; fuentes locales Cormorant Garamond y Manrope. Reservas por WhatsApp con datos comerciales centralizados en `src/config/business.ts`.
 
-## Desarrollo y validación
+## Desarrollo y comprobaciones
 
-Requiere Node.js 20.9 o superior.
+Node.js 20.9 o superior.
 
 ```sh
-npm install
+npm ci
 npm run dev
 npm run typecheck
+npm test
 npm run build
+npm start
 ```
 
-Vista local: http://127.0.0.1:3000. `npm start` sirve la compilación de producción. La compilación requiere acceso a Google Fonts; `next/font/google` descarga Cormorant Garamond y Manrope para servirlas localmente, sin peticiones a Google desde el navegador.
+Desarrollo en `http://127.0.0.1:3000`. Producción escucha en `0.0.0.0` y utiliza `PORT` (3000 por defecto). El build usa Webpack, conservando la configuración compatible con el alojamiento existente. No descarga fuentes durante la compilación. Licencias de fuentes en `src/app/fonts/`.
 
-## Archivos del rediseño
+## Contenido y conversión
 
-- `src/app/globals.css`: sistema visual, diseño responsive, transiciones, foco y movimiento reducido.
-- `src/app/layout.tsx`: estilos oficiales de Font Awesome y efectos progresivos.
-- `src/config/business.ts`: logo e imágenes locales; conserva teléfono y mensaje originales.
-- `src/components/sections/hero.tsx`, `introduction.tsx`, `benefits.tsx`, `session.tsx`, `trust.tsx`, `faq.tsx`, `contact.tsx`, `final-cta.tsx`: rediseño de las ocho secciones y contenido para visitantes.
-- `src/components/layout/mobile-menu.tsx`, `footer.tsx`, `booking-shortcuts.tsx`: iconografía, logo sobre crema y CTA móvil.
-- `src/components/ui/brand-logo.tsx`, `media-slot.tsx`, `section-heading.tsx`, `whatsapp-link.tsx`: componentes reutilizables actualizados.
-- `src/components/ui/visual-effects.tsx`: nuevo componente para scroll reveal con IntersectionObserver y estado del header; respeta movimiento reducido y mantiene el contenido visible sin JavaScript.
-- `package.json` y `package-lock.json`: paquetes oficiales de Font Awesome; Lucide retirado.
-- `public/images/hero.webp`, `experience.webp`, `details.webp`, `space.webp`: fotografías optimizadas. El archivo oficial `logo.png` permanece intacto.
+Portada → experiencia → bienestar → proceso de sesión → video → material complementario opcional → preguntas → contacto → cierre. Se conservan los recursos aprobados. Las imágenes de ambiente son ilustrativas; no acreditan instalaciones, equipo o clientes reales. El video usa `public/video/frady-cuadrado-web.mp4`, portada `frady-cuadrado-portada.jpg` ambos cuadrados. El original `frady-cuadrado.mp4` se conserva solo en la carpeta local y está excluido de Git por superar el límite de 100 MB de GitHub; no estará disponible en un clon nuevo. Respaldarlo por separado y regenerar copia web/portada al sustituir el video. El enlace alternativo también utiliza la copia web.
 
-## Fotografía y licencias
+Nombre y teléfono del formulario permanecen en memoria hasta continuar en WhatsApp. Incluye validación, consentimiento y campo trampa. El usuario debe enviar el mensaje; no existe backend de recepción, correo ni almacenamiento. No se registran consultas enviadas o citas confirmadas sin evidencia. Los accesos directos permiten consultar sin llenar el formulario.
 
-Cuatro fotografías de Pexels, descargadas el 21 de octubre de 2026 y convertidas localmente a WebP con calidad 82. Pesan aproximadamente 100–155 KB cada una. La licencia permite su uso en sitios comerciales: https://www.pexels.com/license/
+Eventos locales `frady:conversion`: `whatsapp_click`, `booking_click`, `service_select`, `contact_handoff` y `video_play`. No contienen datos personales ni se conectan a un proveedor. El adaptador de analítica y el aviso de privacidad del negocio están pendientes. Ver especificación, limitaciones y recomendaciones en [la auditoría CRO](docs/AUDITORIA-CRO.md).
 
-| Archivo | Autor y fuente | Resolución |
-| --- | --- | --- |
-| `hero.webp` | Dasha — https://www.pexels.com/photo/close-up-photo-of-feet-in-a-bowl-15949785/ | 1400 × 2100 |
-| `experience.webp` | Jonathan Borba — https://www.pexels.com/photo/person-holding-bath-salts-over-someones-legs-in-a-basin-19695949/ | 1100 × 1650 |
-| `details.webp` | Dasha — https://www.pexels.com/photo/photo-of-a-person-washing-someones-feet-at-a-spa-15949782/ | 1100 × 1650 |
-| `space.webp` | KoolShooters — https://www.pexels.com/photo/black-towels-on-the-table-6628486/ | 1400 × 2100 |
+## SEO y despliegue
 
-Las imágenes se identifican en pantalla como ilustrativas. No representan las instalaciones, clientes, equipamiento ni sesiones reales del negocio. No implican que el negocio ofrezca los elementos adicionales visibles en el stock. Al incorporar fotografías propias, actualizar los archivos, alt y leyendas en `business.ts` y en las secciones correspondientes.
+El dominio predeterminado es `https://fradybienestar.com`; puede sobrescribirse con `NEXT_PUBLIC_SITE_URL` antes de compilar (ver `.env.example`). Metadata local, canonical, imagen social, `/sitemap.xml`, `/robots.txt` y datos estructurados de negocio local. No se inventan horarios, precios, reseñas ni credenciales. El domicilio y cuatro teléfonos son los existentes en el proyecto.
 
-Se utiliza `next/image` con tamaños responsive, encuadres reservados y carga diferida excepto el Hero y el logo del encabezado. El logo original mide 840 × 260; se muestra conservando su proporción, sin filtros ni recoloración.
+Para publicar en el alojamiento Node.js existente: `npm ci`, `npm run build`, `npm start`. Los cambios de este trabajo son locales; compilar no publica el sitio. No se añadieron dependencias.
 
-## Dependencias y comportamiento
+## Auditoría SEO final
 
-Font Awesome oficial: `@fortawesome/fontawesome-svg-core`, `@fortawesome/react-fontawesome`, `@fortawesome/free-solid-svg-icons`, `@fortawesome/free-brands-svg-icons`. No se incorpora una biblioteca de animación.
+Ver [SEO-FINAL.md](docs/SEO-FINAL.md) para hallazgos, mapa de palabras clave por oferta real, metadatos finales, validación oficial, configuración pendiente de Search Console/Cloudflare y Google Business Profile, evidencias y plan de medición de 90 días.
 
-El acordeón usa botones con `aria-expanded`, regiones asociadas y cierre/apertura mediante CSS Grid. El menú conserva cierre por Escape, clic externo y salida de foco. El acceso fijo inferior aparece solo en móvil y el flotante solo en pantallas mayores. El footer reserva espacio para la barra móvil.
-
-Los enlaces de WhatsApp conservan el evento local `frady:conversion` de `src/lib/analytics.ts`. No se conecta un proveedor de analítica ni se envía información adicional.
-
-## Datos reales pendientes
-
-Configurar en `src/config/business.ts` cuando se confirmen:
-
-- Dirección exacta y enlaces verificados del local en Google Maps. El enlace actual muestra la ciudad y se identifica como tal. Solo se carga un mapa embebido si existe `location.mapEmbedUrl` verificado.
-- Horarios y precio de las sesiones. La duración aproximada de 30–45 minutos procede de los folletos proporcionados; las indicaciones específicas se confirman al reservar.
-- Fotografías propias autorizadas del establecimiento y servicio.
-- Dominio final mediante `NEXT_PUBLIC_SITE_URL`, aviso de privacidad e imagen de Open Graph.
-
-El servicio mantiene su nombre comercial sin prometer eliminación de toxinas ni resultados clínicos. No se incluyen testimonios, certificaciones ni promociones inventadas.
-
-## Adaptación de los folletos comerciales
-
-Se distribuyó el contenido proporcionado por el usuario entre la portada (duración), la introducción (baño con dispositivo iónico), seis ejes de bienestar, cuatro pasos de la sesión, una guía de comodidad antes/después y diez preguntas frecuentes. Se añadió el segundo WhatsApp del primer folleto (834 547 2783) como contacto alternativo; se conserva el principal y su mensaje. La dirección sigue sin configurarse por indicación del usuario.
-
-Las cuatro visitas semanales y la posibilidad de volver cada dos o tres semanas se presentan como consultas de agenda, sin pautas terapéuticas ni resultados garantizados. No se replica la supuesta extracción de toxinas por los poros, ni promesas sobre circulación, inmunidad, inflamación o seguridad universal. Las sensaciones de ligereza y renovación se expresan como objetivos personales, no como resultados fisiológicos.
-
-Referencia consultada para las respuestas sobre evidencia y precauciones: Cleveland Clinic, “Why Foot Detoxes Don’t Work”: https://health.clevelandclinic.org/foot-detox . Las sugerencias de hidratación no indican consumo excesivo ni contradicen restricciones médicas individuales.
+Los metadatos propios de inicio y su grafo JSON-LD se centralizan en `src/config/seo.ts`; el layout conserva la plantilla de títulos. Para repetir la comprobación SEO contra un build en ejecución: `npm run seo:check` (por defecto `http://127.0.0.1:3000`; cambiar con `SEO_BASE_URL`). El redirect de `www.fradybienestar.com` al dominio HTTPS sin www se configura en Next.js; DNS, certificado y HTTP→HTTPS requieren comprobación externa tras publicar.

@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import localFont from "next/font/local";
 import { business } from "@/config/business";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
@@ -11,27 +11,28 @@ import "./globals.css";
 
 config.autoAddCss = false;
 
-const heading = Cormorant_Garamond({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-heading", display: "swap" });
-const body = Manrope({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--font-body", display: "swap" });
-
-const title = `${business.name} | Bienestar en ${business.city}`;
-const description = `Conoce ${business.name} en ${business.city}, ${business.region}. Una experiencia de relajación y bienestar con desintoxicación iónica. Información y citas por WhatsApp.`;
+const heading = localFont({
+  src: "./fonts/cormorant-garamond-variable.ttf",
+  weight: "300 700",
+  style: "normal",
+  variable: "--font-heading",
+  display: "swap",
+  fallback: ["Georgia", "serif"],
+  adjustFontFallback: "Times New Roman",
+});
+const body = localFont({
+  src: "./fonts/manrope-variable.ttf",
+  weight: "200 800",
+  style: "normal",
+  variable: "--font-body",
+  display: "swap",
+  fallback: ["Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
-  title,
-  description,
+  metadataBase: new URL(business.siteUrl),
+  title: { default: business.name, template: `%s | ${business.name}` },
   applicationName: business.name,
-  ...(business.siteUrl ? { metadataBase: new URL(business.siteUrl), alternates: { canonical: "/" } } : {}),
-  openGraph: {
-    type: "website",
-    locale: business.locale,
-    siteName: business.name,
-    title,
-    description,
-    ...(business.siteUrl ? { url: business.siteUrl } : {}),
-    ...(business.openGraphImage ? { images: [{ url: business.openGraphImage.src, width: business.openGraphImage.width, height: business.openGraphImage.height, alt: business.openGraphImage.alt }] } : {}),
-  },
-  twitter: { card: business.openGraphImage ? "summary_large_image" : "summary", title, description },
 };
 
 export const viewport: Viewport = { themeColor: "#0F3D2E", width: "device-width", initialScale: 1 };
